@@ -1,0 +1,63 @@
+- hosts: all
+  roles:
+    - role: common
+    - role: geerlingguy.git
+      become: true
+    - role: geerlingguy.docker
+      become: true
+      docker_users:
+        - "{{ ansible_user }}"
+    - role: andrewrothstein.node
+      become: true
+    - role: andrewrothstein.kubectl
+      become: true
+    - role: gantsign.atom
+      become: true
+      users:
+        - username: "{{ ansible_user }}"
+          atom_packages:
+            - atom-beautify
+            - atom-debug-ui
+            - atom-ide-ui
+            - busy-signal
+            - editorconfig
+            - file-icons
+            - ide-php
+            - intentions
+            - language-ansible
+            - language-docker
+            - language-gherkin
+            - language-pug
+            - language-terraform
+            - language-vue
+            - linter
+            - linter-ansible-linting
+            - linter-ansible-syntax
+            - linter-coffeelint
+            - linter-docker
+            - linter-eslint
+            - linter-htmlhint
+            - linter-phpcs
+            - linter-phpmd
+            - linter-proselint
+            - linter-pug
+            - linter-pylint
+            - linter-rubocop
+            - linter-sass-lint
+            - linter-spell
+            - linter-spell-latex
+            - linter-stylelint
+            - linter-ui-default
+            - linter-textlint
+            - php-debug
+            - prettier-atom
+            - sort-lines
+            - todo-show
+    - role: gantsign.antigen
+      become: true
+      users:
+        - username: vagrant
+          antigen_libraries:
+            - name: oh-my-zsh
+              antigen_bundles:
+                - name: docker-compose

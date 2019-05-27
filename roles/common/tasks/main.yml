@@ -1,0 +1,59 @@
+- name: Ensure default crap is removed
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - ubuntu-web-launchers
+    - rhythmbox
+    - totem
+    - transmission-gtk
+    - transmission-common
+
+- name: Ensure NTP-related packages are installed.
+  become: yes
+  package:
+    name: ntp
+    state: latest
+
+- name: Ensure zsh is installed
+  become: yes
+  package:
+    name: zsh
+    state: latest
+
+- name: Ensure vim is installed
+  become: yes
+  package:
+    name: vim
+    state: latest
+
+- name: Ensure tmux is installed
+  become: yes
+  package:
+    name: tmux
+    state: latest
+
+- name: Ensure repo is installed
+  become: yes
+  get_url:
+    url: https://storage.googleapis.com/git-repo-downloads/repo
+    dest: /usr/local/bin/repo
+    mode: 0755
+    checksum: sha256:d06f33115aea44e583c8669375b35aad397176a411de3461897444d247b6c220
+
+- name: Ensure pip is installed
+  become: yes
+  package:
+    name: python-pip
+    state: latest
+
+- name: Install ansiblelint
+  become: yes
+  pip:
+    name:
+      - pip
+      - ansible
+      - ansible-lint
+      - docker
+      - molecule

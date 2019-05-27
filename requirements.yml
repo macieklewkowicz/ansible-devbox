@@ -1,0 +1,6 @@
+- src: geerlingguy.git
+- src: geerlingguy.docker
+- src: andrewrothstein.node
+- src: andrewrothstein.kubectl
+- src: gantsign.atom
+- src: gantsign.antigen
