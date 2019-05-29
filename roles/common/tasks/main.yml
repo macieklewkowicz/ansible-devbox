@@ -57,3 +57,9 @@
       - ansible-lint
       - docker
       - molecule
+
+- name: Ensure mysql-client is installed
+  become: yes
+  package:
+    name: mysql-client
+    state: latest
