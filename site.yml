@@ -3,18 +3,18 @@
     - role: common
     - role: geerlingguy.git
       become: true
+    - role: andrewrothstein.node
+      become: true
     - role: geerlingguy.docker
       become: true
       docker_users:
-        - "{{ ansible_user }}"
-    - role: andrewrothstein.node
-      become: true
+        - "{{ user }}"
     - role: andrewrothstein.kubectl
       become: true
     - role: gantsign.atom
       become: true
       users:
-        - username: "{{ ansible_user }}"
+        - username: "{{ user }}"
           atom_packages:
             - atom-beautify
             - atom-debug-ui
@@ -56,7 +56,7 @@
     - role: gantsign.antigen
       become: true
       users:
-        - username: vagrant
+        - username: "{{ user }}"
           antigen_libraries:
             - name: oh-my-zsh
               antigen_bundles:

@@ -5,12 +5,14 @@ Vagrant.configure("2") do |config|
     v.gui = true
   end
 
-
   config.vm.provision "shell",
     inline: "sudo apt-get install -y python"
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "site.yml"
+    ansible.host_vars = {
+      "default" => {"user" => "vagrant"}
+    }
   end
 
 end
