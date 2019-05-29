@@ -1,4 +1,6 @@
 - src: geerlingguy.git
+- src: geerlingguy.php
+- src: geerlingguy.composer
 - src: geerlingguy.docker
 - src: andrewrothstein.node
 - src: andrewrothstein.kubectl

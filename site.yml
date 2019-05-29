@@ -3,6 +3,10 @@
     - role: common
     - role: geerlingguy.git
       become: true
+    - role: geerlingguy.php
+      become: true
+    - role: geerlingguy.composer
+      become: true
     - role: andrewrothstein.node
       become: true
     - role: geerlingguy.docker
