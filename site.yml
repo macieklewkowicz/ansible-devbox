@@ -34,7 +34,6 @@
             - language-pug
             - language-terraform
             - language-vue
-            - linter
             - linter-ansible-linting
             - linter-ansible-syntax
             - linter-coffeelint
