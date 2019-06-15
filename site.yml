@@ -62,5 +62,12 @@
         - username: "{{ user }}"
           antigen_libraries:
             - name: oh-my-zsh
-              antigen_bundles:
-                - name: docker-compose
+          antigen_theme:
+            name: spaceship
+            url: https://github.com/denysdovhan/spaceship-zsh-theme
+          antigen_bundles:
+            - name: docker-compose
+            - name: git
+            - name: npm
+            - name: pip
+
