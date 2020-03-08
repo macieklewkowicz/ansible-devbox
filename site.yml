@@ -1,6 +1,12 @@
 - hosts: all
   roles:
     - role: common
+    - role: souenzzo.pathogit
+      pathogen_plugins:
+      - repo: "https://tpope.io/vim/speeddating.git"
+      - repo: "https://github.com/jceb/vim-orgmode"
+      - repo: "https://github.com/editorconfig/editorconfig-vim"
+      - repo: "https://github.com/plasticboy/vim-markdown.git"
     - role: geerlingguy.git
       become: true
     - role: geerlingguy.php
