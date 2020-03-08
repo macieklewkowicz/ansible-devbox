@@ -69,11 +69,12 @@
           antigen_libraries:
             - name: oh-my-zsh
           antigen_theme:
-            name: spaceship
-            url: https://github.com/denysdovhan/spaceship-zsh-theme
+            name: powerlevel10k
+            url: https://github.com/romkatv/powerlevel10k
           antigen_bundles:
+            - name: command-not-found
+            - name: docker
             - name: docker-compose
             - name: git
             - name: npm
             - name: pip
-
