@@ -11,6 +11,7 @@
       become: true
     - role: geerlingguy.php
       become: true
+      php_enable_webserver: false
     - role: geerlingguy.composer
       become: true
     - role: andrewrothstein.node
